@@ -3,9 +3,6 @@ import Image from "next/image";
 import {
     SearchIcon,
     PlusCircleIcon,
-    UserGroupIcon,
-    HeartIcon,
-    PaperAirplaneIcon,
     MenuIcon,
     HomeIcon,
 } from "@heroicons/react/outline";
@@ -55,13 +52,12 @@ function Header() {
             
             <div className='flex items-center justify-end space-x-4'>
                 <HomeIcon onClick={() => router.push('/')} className='navBtn' />
-                <MenuIcon className='h-6 md:hidden cursor-pointer' />
+                {/* <MenuIcon className='h-6 md:hidden cursor-pointer' /> */}
 
                 {session ? (
                     <>
                     
                     <PlusCircleIcon onClick={() => setOpen(true)} className='navBtn' />
-                    {/* <HeartIcon className='navBtn' /> */}
                     <img
                         onClick={signOut}
                         src={session.user.image}
