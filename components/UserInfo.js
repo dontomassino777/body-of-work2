@@ -3,7 +3,7 @@ import Stats from "./Stats";
 import { useSession } from "next-auth/react";
 import MiniProfile from "./MiniProfile";
 
-function Stories() {
+function UserInfo() {
     const { data: session } = useSession();
 
 
@@ -13,12 +13,12 @@ function Stories() {
         {session && (
             <MiniProfile />
         )}
-
+{/* 
         {session && (
             <Stats />
-        )}
+        )} */}
     </div>
   );
 }
 
-export default Stories;
+export default UserInfo;

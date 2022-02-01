@@ -40,6 +40,10 @@ function Post({ id, username, userImg, img, caption }) {
         }
     };
 
+    const deletePost = async () => {
+        await deleteDoc(doc(db, 'posts', id));
+    }
+
     const sendComment = async (e) => {
         e.preventDefault();
 
@@ -79,6 +83,8 @@ function Post({ id, username, userImg, img, caption }) {
                             <HeartIcon onClick={likePost} className='btn' />
                         )
                     }
+                    <TrashIcon onClick={deletePost} className='btn' />
+                    
                 </div>
             </div>  
         )}
