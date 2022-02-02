@@ -3,7 +3,6 @@ import Image from "next/image";
 import {
     SearchIcon,
     PlusCircleIcon,
-    MenuIcon,
     HomeIcon,
 } from "@heroicons/react/outline";
 import { signIn, signOut, useSession } from 'next-auth/react';

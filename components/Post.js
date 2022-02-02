@@ -10,6 +10,7 @@ import { addDoc, collection, doc, deleteDoc, onSnapshot, orderBy, query, serverT
 import { db } from "../firebase";
 import Moment from "react-moment";
 
+
 function Post({ id, username, userImg, img, caption }) {
     const { data: session } = useSession();
     const [comment, setComment] = useState("");
@@ -41,7 +42,9 @@ function Post({ id, username, userImg, img, caption }) {
     };
 
     const deletePost = async () => {
+       
         await deleteDoc(doc(db, 'posts', id));
+        
     }
 
     const sendComment = async (e) => {
@@ -58,9 +61,10 @@ function Post({ id, username, userImg, img, caption }) {
         });
     };
 
-    
+    // console.log(post.data())
 
   return (
+      
     <div className='bg-white my-7 border rounded-sm'>
         
         {/* header */}
@@ -83,7 +87,8 @@ function Post({ id, username, userImg, img, caption }) {
                             <HeartIcon onClick={likePost} className='btn' />
                         )
                     }
-                    <TrashIcon onClick={deletePost} className='btn' />
+
+                    {/* <TrashIcon onClick={deletePost} className='btn' /> */}
                     
                 </div>
             </div>  
